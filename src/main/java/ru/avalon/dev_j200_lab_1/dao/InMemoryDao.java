@@ -3,6 +3,7 @@ package ru.avalon.dev_j200_lab_1.dao;
 import ru.avalon.dev_j200_lab_1.model.Client;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -16,9 +17,12 @@ public class InMemoryDao implements ClientDao {
 
     //only for test
     {
-        clients.put(counter.incrementAndGet(), new Client("Ivan"));
-        clients.put(counter.incrementAndGet(), new Client("Pasha"));
-        clients.put(counter.incrementAndGet(), new Client("Masha"));
+        Client ivan = new Client(counter.incrementAndGet(), "Ivan", "fiz", new Date());
+        Client pasha = new Client(counter.incrementAndGet(), "Pasha", "fiz", new Date());
+        Client masha = new Client(counter.incrementAndGet(), "Masha", "ur", new Date());
+        clients.put(ivan.getId(), ivan);
+        clients.put(pasha.getId(), pasha);
+        clients.put(masha.getId(), masha);
     }
 
     @Override
