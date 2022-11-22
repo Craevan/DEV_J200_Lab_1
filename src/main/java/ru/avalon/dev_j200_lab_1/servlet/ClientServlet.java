@@ -11,15 +11,14 @@ import javax.servlet.annotation.*;
 public class ClientServlet extends HttpServlet {
     private InMemoryDao db;
 
+    @Override
     public void init() {
-        db = new InMemoryDao();
+        db = InMemoryDao.getInstance();
     }
 
+    @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("clientToList", db.read());
         request.getRequestDispatcher("clients.jsp").forward(request, response);
-    }
-
-    public void destroy() {
     }
 }
