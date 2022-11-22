@@ -25,9 +25,20 @@ public class InMemoryDao implements ClientDao {
         clients.put(masha.getId(), masha);
     }
 
+    public AtomicInteger getCounter() {
+        return counter;
+    }
+
+    private InMemoryDao(){
+    }
+
+    public static InMemoryDao getInstance() {
+        return InMemoryDaoHolder.HOLDER_INSTANCE;
+    }
+
     @Override
     public void create(Client client) {
-        clients.put(counter.incrementAndGet(), client);
+        clients.put(client.getId(), client);
     }
 
     @Override
@@ -43,5 +54,9 @@ public class InMemoryDao implements ClientDao {
     @Override
     public void delete(Client client) {
 
+    }
+
+    private static class InMemoryDaoHolder {
+        private static final InMemoryDao HOLDER_INSTANCE = new InMemoryDao();
     }
 }
