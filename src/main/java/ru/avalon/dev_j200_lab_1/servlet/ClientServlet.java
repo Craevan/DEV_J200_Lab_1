@@ -7,7 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
-@WebServlet(name = "helloServlet", value = "/clients")
+@WebServlet(name = "clients", value = "/clients")
 public class ClientServlet extends HttpServlet {
     private InMemoryDao db;
 
@@ -18,6 +18,9 @@ public class ClientServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+
         request.setAttribute("clientToList", db.read());
         request.getRequestDispatcher("clients.jsp").forward(request, response);
     }
