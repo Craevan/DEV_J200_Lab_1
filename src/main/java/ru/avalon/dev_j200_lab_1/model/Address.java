@@ -43,7 +43,6 @@ public class Address {
                 ", mac='" + mac + '\'' +
                 ", model='" + model + '\'' +
                 ", address='" + address + '\'' +
-                ", client=" + client +
                 '}';
     }
 }
