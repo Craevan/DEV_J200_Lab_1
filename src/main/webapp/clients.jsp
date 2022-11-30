@@ -1,9 +1,10 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<html lang="ru">
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<!DOCTYPE html>
+<html>
 <head>
-    <title>Meal list</title>
+    <title>Client list</title>
 </head>
 <body>
 <h3><a href="index.jsp">Home</a></h3>
@@ -25,7 +26,7 @@
             <td>${client.id}</td>
             <td>${client.name}</td>
             <td>${client.type}</td>
-            <td>${client.added}</td>
+            <td><fmt:formatDate type="time" value="${client.added}" pattern="dd.MM.yyyy"/></td>
             <td>${client.addresses}</td>
         </tr>
     </c:forEach>
