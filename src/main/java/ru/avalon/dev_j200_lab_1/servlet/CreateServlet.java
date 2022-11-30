@@ -33,7 +33,7 @@ public class CreateServlet extends HttpServlet {
             client = new Client(db.getCounter().incrementAndGet(),
                     req.getParameter("name"),
                     req.getParameter("type"),
-                    DateUtil.getFomatedDate(req.getParameter("date")));
+                    DateUtil.getFormattedDate(req.getParameter("date")));
         } catch (ParseException e) {
             //TODO logging
             throw new RuntimeException(e);
