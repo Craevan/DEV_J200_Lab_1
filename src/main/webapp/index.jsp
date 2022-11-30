@@ -9,8 +9,8 @@
 </h1>
 <br/>
 <form>
-        <button type="submit" formaction="clients">View Clients</button>
-        <button type="submit" formaction="create.jsp">Create Client</button>
+    <button type="submit" formaction="clients">View Clients</button>
+    <button type="submit" formaction="create.jsp">Create Client</button>
 </form>
 </body>
 </html>
