@@ -9,8 +9,8 @@ public interface ClientDao {
 
     List<Client> read();
 
-    void update(Client client);
+    void update(int id);
 
-    void delete(Client client);
+    void delete(int id);
 
 }
