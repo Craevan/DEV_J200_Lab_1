@@ -28,6 +28,8 @@
             <td>${client.type}</td>
             <td><fmt:formatDate type="time" value="${client.added}" pattern="dd.MM.yyyy"/></td>
             <td>${client.addresses}</td>
+            <td><a href="clients?action=update&id=${client.id}">Update</a></td>
+            <td><a href="clients?action=delete&id=${client.id}">Delete</a></td>
         </tr>
     </c:forEach>
 </table>
