@@ -17,7 +17,7 @@ public class InMemoryDao implements ClientDao {
 
     //only for test
     {
-        Client ivan = new Client(counter.incrementAndGet(), "Ivan", "fiz", new Date());
+        Client ivan = new Client(counter.get(), "Ivan", "fiz", new Date());
         Client pasha = new Client(counter.incrementAndGet(), "Pasha", "fiz", new Date());
         Client masha = new Client(counter.incrementAndGet(), "Masha", "ur", new Date());
         clients.put(ivan.getId(), ivan);
@@ -47,13 +47,13 @@ public class InMemoryDao implements ClientDao {
     }
 
     @Override
-    public void update(Client client) {
+    public void update(int id) {
 
     }
 
     @Override
-    public void delete(Client client) {
-
+    public void delete(int id) {
+        clients.remove(id);
     }
 
     private static class InMemoryDaoHolder {
